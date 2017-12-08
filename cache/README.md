@@ -13,3 +13,10 @@
    a.monitor（cglib）
 4.redis-persistent
 ````
+##### memcached
+````
+1.spyMemcached
+2.XMemcached
+3.Memcached-Java-Client
+
+````

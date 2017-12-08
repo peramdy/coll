@@ -1,0 +1,12 @@
+FROM centos:laster
+MAINTAINER peramdy peramdylee@gmail.com
+ENV REFRESHED 2017-12-04
+ENV REDIS_HOME /usr/local/redis
+ADD redis-4.0.6.tar.gz  /opt/redis/
+RUN ln -s /opt/redis/redis-4.0.6 $REDIS_HOME
+RUN yum -y install gcc automake autoconf libtool make
+RUN yum -y install gcc gcc-c++
+WORKDIR $REDIS_HOME
+RUN make MALLOC=libc
+EXPOSE 6379
+ENTRYPOINT ["/usr/local/redis/src/redis-server","/usr/local/redis/redis.conf"]

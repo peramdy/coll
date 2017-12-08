@@ -62,11 +62,14 @@ public class HelloTest extends TestCase {
                 .builder()
                 .timeOut(2)
                 .maxTotal(10)
-                .addressConfigs("192.168.136.130:16379,192.168.136.130:16360")
+                .addressConfigs("192.168.136.130:17001,192.168.136.130:17002," +
+                        "192.168.136.130:17003,192.168.136.130:17004," +
+                        "192.168.136.130:17005,192.168.136.130:17006")
                 .poolConfig(poolConfig)
                 .build();
 
-        jedisCluster.set("slave2", "5555");
+        jedisCluster.set("cluster", "6666");
+        System.out.println(jedisCluster.get("cluster"));
 
     }
 
