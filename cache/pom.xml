@@ -20,6 +20,10 @@
         <jmeter-java.version>3.3</jmeter-java.version>
         <slf4j.version>1.7.25</slf4j.version>
         <common-pool2.version>2.4.2</common-pool2.version>
+        <cglib.verison>3.2.5</cglib.verison>
+        <xmemcache.version>2.4.0</xmemcache.version>
+        <spymemcached.version>2.12.3</spymemcached.version>
+        <Memcached-Java-Client.version>3.0.2</Memcached-Java-Client.version>
     </properties>
 
     <dependencies>
@@ -93,33 +97,29 @@
         <dependency>
             <groupId>cglib</groupId>
             <artifactId>cglib</artifactId>
-            <version>3.2.5</version>
+            <version>${cglib.verison}</version>
         </dependency>
 
         <!-- xmemcached -->
         <dependency>
             <groupId>com.googlecode.xmemcached</groupId>
             <artifactId>xmemcached</artifactId>
-            <version>2.4.0</version>
+            <version>${xmemcache.version}</version>
         </dependency>
 
         <!-- spymemcached -->
         <dependency>
             <groupId>net.spy</groupId>
             <artifactId>spymemcached</artifactId>
-            <version>2.12.3</version>
+            <version>${spymemcached.version}</version>
         </dependency>
 
         <!-- Memcached-Java-Client -->
         <dependency>
             <groupId>com.whalin</groupId>
             <artifactId>Memcached-Java-Client</artifactId>
-            <version>3.0.2</version>
+            <version>${Memcached-Java-Client.version}</version>
         </dependency>
-
-
-
-
 
     </dependencies>
 </project>
