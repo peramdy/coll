@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <!-- 提供方应用信息，用于计算依赖关系 -->
+    <dubbo:application name="dubbo-provider-manual"/>
+
+    <!-- 注册中心服务地址 -->
+    <!--<dubbo:registry id="zookeeper" protocol="zookeeper" address="zookeeper://192.168.10.122:2181" />-->
+    <dubbo:registry id="zookeeper" protocol="zookeeper" address="zookeeper://192.168.136.130:12182"/>
+
+    <!-- 用dubbo协议在端口 -->
+    <!--<dubbo:protocol name="${dubbo.protocol.name}" port="${dubbo.protocol.port}"  threads="5000"/>-->
+    <dubbo:protocol name="dubbo" port="20881" serialization="kryo" threads="5000"
+                    optimizer="com.peramdy.serialization.SerializationOptimizerImpl"/>
+
+    <!-- 声明需要暴露的服务接口 -->
+    <dubbo:service interface="com.peramdy.service.inf.ITestService" ref="testService"/>
+
+    <bean class="com.peramdy.service.TestService" name="testService"/>
+
+
+</beans>
